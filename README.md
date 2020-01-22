@@ -63,7 +63,7 @@ typedef struct			s_sym
 But the information available on each symbol in the ```LC_SYMTAB``` is insufficient. We must then iterate through all of the sections to check the type of sections they come from, and assign it to ```type``` (see ```nm_sym_type.c```).  
 Once the list of symbols if complete, all that is left is to print it.  
 
-```ft_otool``` will simply search for the __text section of the __TEXT segment and hexdump its data.  
+```ft_otool``` will simply search for the ```__text``` section of the ```__TEXT``` segment and hexdump its data.  
 
 ### Features
 - Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
