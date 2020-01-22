@@ -12,7 +12,7 @@ Supported:
 Protected against corrupted binaries (checkoverflow)
 
 # Useful links
-[Macho file format reference](https://github.com/aidansteele/osx-abi-macho-file-format-reference)
-[Comparison of different executable file formats](https://en.wikipedia.org/wiki/Comparison_of_executable_file_formats)
-[Big and little endian](https://medium.com/worldsensing-techblog/big-endian-or-little-endian-37c3ed008c94)
-[Symbol types from ```nm``` Linux man page](https://linux.die.net/man/1/nm)
+[Macho file format reference](https://github.com/aidansteele/osx-abi-macho-file-format-reference)  
+[Comparison of different executable file formats](https://en.wikipedia.org/wiki/Comparison_of_executable_file_formats)  
+[Big and little endian](https://medium.com/worldsensing-techblog/big-endian-or-little-endian-37c3ed008c94)  
+[Symbol types from ```nm``` Linux man page](https://linux.die.net/man/1/nm)  
