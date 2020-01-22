@@ -3,14 +3,14 @@ C implementation of Unix binary analysis tools nm &amp; otool -t
 This project was helpful to learn about the structure and variety of macho-o files
 
 ## Features
-Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm
+Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
+Protected against corrupted binaries (checkoverflow)
+
 ### Supported files
 - 32bit and 64bit binaries
 - Big and Small endian binaries
 - Archives
 - FAT binaries
-
-Protected against corrupted binaries (checkoverflow)
 
 # Useful links
 [Macho file format reference](https://github.com/aidansteele/osx-abi-macho-file-format-reference)  
