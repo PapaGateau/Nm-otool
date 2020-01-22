@@ -42,8 +42,28 @@ For archives  ```<ar.h>```:
 ```
 
 Once we know the type of file we are dealing with, we know its structure.  
+All of the structures required to parse through the header, the segments and the sections are defined in ```<mach-o/loader.h>```.
 
 ![alt text](https://blog.timac.org/2016/0723-cryptedhelloworld-app-with-encrypted-mach-o-sections/macho.png)
+
+```ft_nm``` will create a virtual list of each symbol found in the ```LC_SYMTAB``` segment command
+
+```c
+typedef struct			s_sym
+{
+	char				*name;
+	char				type;
+	bool				name_failed;
+	uint8_t				n_type;
+	uint8_t				n_sect;
+	uint64_t			n_value;
+}						t_sym;
+```
+
+But the information available on each symbol in the ```LC_SYMTAB``` is insufficient. We must then iterate through all of the sections to check the type of sections they come from, and assign it to ```type``` (see ```nm_sym_type.c```).  
+Once the list of symbols if complete, all that is left is to print it.  
+
+```ft_otool``` will simply search for the __text section of the __TEXT segment and hexdump its data.  
 
 ### Features
 - Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
@@ -56,6 +76,7 @@ Once we know the type of file we are dealing with, we know its structure.
 - FAT binaries
 
 ## Useful links
+[Parsing mach-o files](https://lowlevelbits.org/parsing-mach-o-files/)  
 [Macho file format reference](https://github.com/aidansteele/osx-abi-macho-file-format-reference)  
 [Comparison of different executable file formats](https://en.wikipedia.org/wiki/Comparison_of_executable_file_formats)  
 [Big and little endian](https://medium.com/worldsensing-techblog/big-endian-or-little-endian-37c3ed008c94)  
