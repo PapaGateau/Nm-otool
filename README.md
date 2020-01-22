@@ -1,6 +1,22 @@
 # Nm-otool
-C implementation of Unix binary analysis tools nm &amp; otool -t  
-This project was helpful to learn about the structure and variety of macho-o files
+C implementation of Unix binary analysis tools ```nm``` &amp; ```otool -t```  
+This project was helpful to learn about the structure of macho-o files as well as how to parse and analyse them.
+
+## Commands
+### Build
+```bash
+make # compile ft_nm & ft_otool executables
+make clean # remove object files
+make fclean # remove ft_nm & ft_otool executables, remove object files
+```
+
+### Testing
+Both ```ft_nm``` and ```ft_otool``` can be tested using the binaries in ```/usr/bin/```
+
+```bash
+./ft_nm <object file>
+./ft_otool <object file>
+```
 
 ## Features
 - Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
