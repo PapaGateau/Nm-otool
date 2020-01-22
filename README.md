@@ -17,8 +17,11 @@ Both ```ft_nm``` and ```ft_otool``` can be tested using the binaries in ```/usr/
 ./ft_nm <object file>
 ./ft_otool <object file>
 ```
+## Implementation
+### Process
 
-## Features
+
+### Features
 - Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
 - Protected against corrupted binaries (checkoverflow)
 
