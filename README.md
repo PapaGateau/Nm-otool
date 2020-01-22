@@ -1,6 +1,8 @@
 # Nm-otool
 C implementation of Unix binary analysis tools ```nm``` &amp; ```otool -t```  
 This project was helpful to learn about the structure of macho-o files as well as how to parse and analyse them.
+- ```nm``` displays the list of **symbols** of a macho-o file.
+- ```otool``` hexdumps a specified segment or section of a macho-o file, in this case the ```(__TEXT,__text)``` section.
 
 ## Commands
 ### Build
@@ -14,8 +16,8 @@ make fclean # remove ft_nm & ft_otool executables, remove object files
 Both ```ft_nm``` and ```ft_otool``` can be tested using the binaries in ```/usr/bin/```
 
 ```bash
-./ft_nm <object file>
-./ft_otool <object file>
+./ft_nm <object file> <...>
+./ft_otool <object file> <...>
 ```
 ## Implementation
 ### Process
@@ -23,7 +25,7 @@ Both ```ft_nm``` and ```ft_otool``` can be tested using the binaries in ```/usr/
 
 ### Features
 - Concise code able to handle different types of macho-o files from a variety of architectures using a single algorithm  
-- Protected against corrupted binaries (checkoverflow)
+- Protected against corrupted binaries (checking file or segment overflows, invalid headers)
 
 ### Supported files
 - 32bit and 64bit binaries
